@@ -1,4 +1,5 @@
 use poise::serenity_prelude as serenity;
+
 mod commands;
 mod utils;
 
@@ -9,7 +10,7 @@ async fn main() -> anyhow::Result<()> {
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![commands::ping],
+            commands: vec![commands::ping()],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
@@ -20,7 +21,7 @@ async fn main() -> anyhow::Result<()> {
         })
         .build();
 
-    let client = serenity::ClientBuilder::new(token, intents)
+    let mut client = serenity::ClientBuilder::new(token, intents)
         .framework(framework)
         .await?;
     client.start().await?;

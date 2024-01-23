@@ -6,6 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow.workspace = true
 db = { version = "0.1.0", path = "../db" }
 poise = { git = "https://github.com/serenity-rs/poise.git", version = "0.6.1" }
 sqlx.workspace = true
+tokio = { version = "1.35.1", features = ["full"] }

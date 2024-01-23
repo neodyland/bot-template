@@ -7,9 +7,9 @@ pub struct Data {
 }
 
 impl Data {
-    pub async fn new() -> Result<Self, Error> {
+    pub async fn new() -> anyhow::Result<Self> {
         let pool = PgPool::connect(&std::env::var("DATABASE_URL")?).await?;
-        sqlx::migrate!("./migrations").run(&pool).await?;
+        sqlx::migrate!("../migrations").run(&pool).await?;
         Ok(Self {
             pool: Arc::new(pool),
         })
@@ -18,4 +18,4 @@ impl Data {
 
 pub type Error = Box<dyn std::error::Error + Send + Sync>;
 pub type Context<'a> = poise::Context<'a, Data, Error>;
-pub type Result = Result<(), Error>;
+pub type CommandResult = Result<(), Error>;

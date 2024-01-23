@@ -1,9 +1,7 @@
 [workspace]
-members = [
-    "bot",
-    "db"
-]
+members = ["bot", "db"]
 resolver = "2"
 
 [workspace.dependencies]
+anyhow = "1.0.79"
 sqlx = { version = "0.7.3", features = ["runtime-tokio", "postgres"] }
