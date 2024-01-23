@@ -1,5 +1,6 @@
 use crate::utils;
 
+/// Echo back the given text.
 #[poise::command(prefix_command, track_edits, slash_command)]
 pub async fn ping(
     ctx: utils::Context<'_>,
