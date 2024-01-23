@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "bot",
+    "db"
+]
+resolver = "2"
+
+[workspace.dependencies]

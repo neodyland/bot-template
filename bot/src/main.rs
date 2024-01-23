@@ -1,5 +1,6 @@
 use poise::serenity_prelude as serenity;
-mod utils
+mod utils;
+mod commands;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -8,13 +9,13 @@ async fn main() -> anyhow::Result<()> {
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![],
+            commands: vec![commands::ping],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
             Box::pin(async move {
                 poise::builtins::register_globally(ctx, &framework.options().commands).await?;
-                Ok(Data {})
+                Ok(utils::Data::new().await?)
             })
         })
         .build();
