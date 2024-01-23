@@ -29,7 +29,7 @@ pub async fn get(ctx: utils::Context<'_>, user: Option<serenity::User>) -> utils
     let user = user.unwrap_or(ctx.author().clone());
     let introduction = db::get_introduction(&ctx.data().pool, user.id.get() as i64).await?;
     ctx.say(format!(
-        "{}'s introduction:\n{}",
+        "{}",
         user.name,
         introduction.unwrap_or("".to_string())
     ))
