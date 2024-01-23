@@ -1,6 +1,6 @@
 use poise::serenity_prelude as serenity;
-mod utils;
 mod commands;
+mod utils;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

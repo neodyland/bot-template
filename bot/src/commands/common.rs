@@ -1,5 +1,5 @@
-use poise::serenity_prelude as serenity;
 use crate::utils;
+use poise::serenity_prelude as serenity;
 
 #[poise::command(prefix_command, track_edits, slash_command)]
 pub async fn ping(
