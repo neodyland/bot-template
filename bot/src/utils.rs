@@ -3,7 +3,7 @@ use std::sync::Arc;
 
 #[derive(Clone)]
 pub struct Data {
-    pool: Arc<PgPool>,
+    pub pool: Arc<PgPool>,
 }
 
 impl Data {

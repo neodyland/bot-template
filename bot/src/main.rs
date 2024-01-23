@@ -5,12 +5,13 @@ mod utils;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    dotenvy::dotenv().ok();
     let token = std::env::var("DISCORD_TOKEN")?;
     let intents = serenity::GatewayIntents::non_privileged();
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![commands::ping()],
+            commands: vec![commands::ping(), commands::introduction()],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {

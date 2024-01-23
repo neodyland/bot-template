@@ -168,6 +168,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "db",
+ "dotenvy",
  "poise",
  "sqlx",
  "tokio",
@@ -404,6 +405,7 @@ checksum = "7e962a19be5cfc3f3bf6dd8f61eb50107f356ad6270fbb3ed41476571db78be5"
 name = "db"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "sqlx",
 ]
 
