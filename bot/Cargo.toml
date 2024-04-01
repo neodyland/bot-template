@@ -11,4 +11,4 @@ db = { version = "0.1.0", path = "../db" }
 dotenvy = "0.15.7"
 poise = { git = "https://github.com/serenity-rs/poise.git", version = "0.6.1" }
 sqlx.workspace = true
-tokio = { version = "1.36.0", features = ["full"] }
+tokio = { version = "1.37.0", features = ["full"] }
